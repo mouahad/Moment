@@ -11,11 +11,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow?      // variable optionnel qu'on va utiliser
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+       window = UIWindow(frame: UIScreen.main.bounds)  // on initialise "window" ici, frame() = taille de l'ecren sur l'intégralité
+        window?.makeKeyAndVisible()  // le point de départ et tu est visible
+        window?.rootViewController = TabBarController() // view à montrer
         return true
     }
 

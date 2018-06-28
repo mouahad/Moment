@@ -9,10 +9,16 @@
 import UIKit
 
 class MomentCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var imageviewCell: ImageCoinArrondi!
+    
+    var photo: Photo!
+    
+    func mep(_ photo: Photo){
+        self.photo = photo
+        
+        imageviewCell.image = self.photo.image
     }
-
+    
+    
+    
 }

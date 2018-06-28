@@ -10,15 +10,21 @@ import UIKit
 
 class MomentTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var imageViewCell: ImageCoinArrondi!
+    
+    @IBOutlet weak var nomLabel: UILabel!
+    
+    @IBOutlet weak var descLabel: UILabel!
+    
+    var photo: Photo!
+    
+    func mep(_ photo: Photo){
+        self.photo = photo
+        imageViewCell.image = self.photo.image
+        nomLabel.text = "De: " + self.photo.nom
+        descLabel.text = self.photo.desc
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
     
 }
